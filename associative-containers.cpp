@@ -7,7 +7,9 @@
 #include <iostream>
 #include <ostream>
 #include <map>
+#include <unordered_map>
 #include <string>
+#include <functional>
 
 using namespace std;
 
@@ -25,7 +27,8 @@ void foo(const map<int, string>& m) {
 
 int main() {
 
-	map<int, string> m;
+	// map<int, string> m;
+	map<int, string, greater<int>> m; //greater comparator defined in <functional>
 
 	m[1] = "one";
 	m[2] = "two";
@@ -44,11 +47,39 @@ int main() {
 		cout <<  "(" << itr->first << ", " << itr->second << ")" << endl;
 	}
 
-	foo(m);
-
 	//map is implemented with a balanced binary tree
 	//insert O(log N)
 	//erase O(log N)
+	//lookup O(log N)
 
 	m.clear();
+
+	//multimap associates single key with many values while map uses one to one mapping
+	//multimap doesn't overload operator[]
+
+	//set and multiset since templated on a single type, don't use operator[]
+	//set is a sorted container that enforces uniqueness 
+	//time complexities similar to map
+
+	//unordered map has similar interface to map but the implementation is 
+	//based on hash tables
+
+	//insertion, deletion and lookup is amortized O(1)
+
+	unordered_map<int, string> um;
+
+	um[1] = "one";
+	um[2] = "two";
+
+	cout << um[2] << endl;
+
+	um.clear();
+
+	//map is a better choice since can also be modified with the help of comparator.
+	//for map you only need a comparator while for unordered_map you need to define
+	//a good hash function that doesn't lead to too many collisions. Also need an equality 
+	//predicate so as to check whether two objects are equal or not.
+
+
+
 }
