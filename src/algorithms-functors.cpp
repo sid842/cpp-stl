@@ -8,6 +8,7 @@
 using namespace std;
 
 int main() {
+
 	const int arr[] = { 22, 99, 33, 44, 55};
 
 	vector<int> v;
@@ -44,6 +45,30 @@ int main() {
 
 	//If vector doesn't contain the element to be searched, it returns the position
 	//where the element could be inserted. 
+
+	//There is another algorithm know as upper_bound which works in a similar way
+	//but it aslo returns the position where the element needs to inserted, i.e. one past the 
+	//similar element.
+
+	//equal_range algorithm returns the count of element queried. It returns pair of iterators.
+
+	//sorting and binary search algorithms take in a comparator,
+	//that modify the behaviour of the algorithms. 
+
+	//If we define a comparator we need to overload < and not <=. STL is coded that way.
+	//X < X should always return false. And also not modify elements.
+
+
+	//Other sorts are stable_sort, partial_sort
+
+	//nth_element - order statistics. 
+
+	//STL also provides set operations
+
+	//some algorithms of stl are present in <numeric>
+
+	//transform operations are also very useful if similar operation needs to be performed 
+	//on all the elements.
 
 	v.clear();
 
