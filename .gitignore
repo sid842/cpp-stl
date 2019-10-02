@@ -1,2 +1,5 @@
 # Executables
 *.out
+
+# Cpp files not yet ready 
+nurikabe*
