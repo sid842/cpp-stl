@@ -25,8 +25,7 @@ int main() {
 
 	//remove_if returns the itr to the end of the valid array after elements removed. 
 
-	v.erase(remove_if(v.begin(), v.end(), 
-	[] (int e)
+	v.erase(remove_if(v.begin(), v.end(), [] (int e)
 	{
 		return e%2 == 1;
 	}), v.end());
